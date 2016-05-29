@@ -1,0 +1,19 @@
+{
+  "name": "nasha-demo",
+  "version": "1.0.0",
+  "description": "NaSha demo",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "NaSha",
+    "Demo"
+  ],
+  "author": "Mr.Krabs",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^1.2.0",
+    "urllib": "^2.9.1"
+  }
+}
