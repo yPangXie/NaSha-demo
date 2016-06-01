@@ -8,7 +8,7 @@ require('urllib').request('http://bigyoo.me/ns/cmd', {
         "action": "getLatest"
     }
 }).then((result)=> {
-    console.log(result);
+    console.log(JSON.parse(new Buffer(result.data).toString()));
 }).catch((err) => {
     console.log(err);
 });
@@ -22,7 +22,7 @@ require('urllib').request('http://bigyoo.me/ns/cmd', {
         "issue": "100"
     }
 }).then((result)=> {
-    console.log(result);
+    console.log(JSON.parse(new Buffer(result.data).toString()));
 }).catch((err) => {
     console.log(err);
 });
