@@ -1,8 +1,9 @@
 "use strict"
 
-/* 基于NaSha远程命令接口, 获取wanqu日报数据 */
-require('urllib').request('http://bigyoo.me:7000/ns/cmd', {
+/* 基于NaSha远程命令接口, 获取最新一期的wanqu日报数据 */
+require('urllib').request('http://bigyoo.me:8000/ns/cmd', {
     "method": "POST",
+    "timeout": 100000,
     "data": {
         "type": "wanqu",
         "action": "getLatest"
@@ -14,9 +15,10 @@ require('urllib').request('http://bigyoo.me:7000/ns/cmd', {
     console.log(err);
 });
 
-/* 基于NaSha远程命令接口, 获取wanqu日报数据 */
+/* 基于NaSha远程命令接口, 获取指定期的wanqu日报数据 */
 require('urllib').request('http://bigyoo.me:8000/ns/cmd', {
     "method": "POST",
+    "timeout": 100000,
     "data": {
         "type": "wanqu",
         "action": "getSpec",
