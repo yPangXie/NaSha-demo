@@ -10,7 +10,7 @@ require('urllib').request('http://bigyoo.me:8000/ns/cmd', {
     }
 }).then((result)=> {
     let resultData = JSON.parse(new Buffer(result.data).toString());
-    console.log(resultData);
+    console.log('latest:', resultData);
 }).catch((err) => {
     console.log(err);
 });
@@ -26,7 +26,7 @@ require('urllib').request('http://bigyoo.me:8000/ns/cmd', {
     }
 }).then((result)=> {
     let resultData = JSON.parse(new Buffer(result.data).toString());
-    console.log(resultData);
+    console.log('spec:', resultData);
 }).catch((err) => {
     console.log(err);
 });
@@ -42,7 +42,7 @@ require('urllib').request('http://bigyoo.me:8000/ns/cmd', {
     }
 }).then((result)=> {
     let resultData = JSON.parse(new Buffer(result.data).toString());
-    console.log(resultData);
+    console.log('spider:', resultData);
 }).catch((err) => {
     console.log(err);
 });

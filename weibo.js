@@ -1,7 +1,7 @@
 "use strict"
 
 /* 基于NaSha远程命令接口, 发送微薄 */
-require('urllib').request('http://bigyoo.me/ns/cmd', {
+require('urllib').request('http://bigyoo.me:8000/ns/cmd', {
     "method": "POST",
     "data": {
         "type": "weibo",
