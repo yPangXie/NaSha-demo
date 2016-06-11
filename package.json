@@ -13,6 +13,7 @@
   "author": "Mr.Krabs",
   "license": "MIT",
   "dependencies": {
+    "commander": "^2.9.0",
     "koa": "^1.2.0",
     "urllib": "^2.9.1"
   }
