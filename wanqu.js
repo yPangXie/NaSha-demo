@@ -32,7 +32,7 @@ if(program.issue) {
         "data": {
             "type": "wanqu",
             "action": "getSpec",
-            "issue": "1"
+            "issue": program.issue
         }
     }).then((result)=> {
         let resultData = JSON.parse(new Buffer(result.data).toString());
