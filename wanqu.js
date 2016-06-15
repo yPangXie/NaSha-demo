@@ -5,6 +5,7 @@ const program = require('commander');
 program.option('-l, --latest', 'Get latest issue of Wanqu')
        .option('-i, --issue [issue]', 'Get the specified issue of Wanqu')
        .option('-s, --spider [issues]', 'Grab specidied issue from Wanqu with the spider')
+       .option('-d, --detectLatest', 'Detect latest issue of Wanqu')
        .parse(process.argv);
 
 /* 基于NaSha远程命令接口, 获取最新一期的wanqu日报数据 */
@@ -55,6 +56,23 @@ if(program.spider) {
     }).then((result)=> {
         let resultData = JSON.parse(new Buffer(result.data).toString());
         console.log('spider:', resultData);
+    }).catch((err) => {
+        console.log(err);
+    });
+}
+
+/* 基于NaSha远程命令接口, 检测是否有新版本的Wanqu日报发布 */
+if(program.detectLatest) {
+    require('urllib').request('http://bigyoo.me:8000/ns/cmd', {
+        "method": "POST",
+        "timeout": 100000,
+        "data": {
+            "type": "wanqu",
+            "action": "detectLatest"
+        }
+    }).then((result)=> {
+        let resultData = JSON.parse(new Buffer(result.data).toString());
+        console.log('detectLatest result:', resultData);
     }).catch((err) => {
         console.log(err);
     });
