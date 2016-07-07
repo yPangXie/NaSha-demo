@@ -14,7 +14,7 @@ if(program.spider) {
         "data": {
             "type": "workflow",
             "action": "spider",
-            "url": program.spider
+            "urls": program.spider || ''
         }
     }).then((result)=> {
         let resultData = JSON.parse(new Buffer(result.data).toString());
