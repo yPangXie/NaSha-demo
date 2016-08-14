@@ -18,8 +18,7 @@ if(program.newPost) {
             "description": "test description",
             "url": "http://www.google.com",
             "favicon": "en. favicon",
-            "keywords": "keywords, keywords",
-            "tag": "前端, 测试, 你好, 哈哈, 嘿嘿.."
+            "keywords": "keywords, keywords"
         }
     }).then((result)=> {
         let resultData = JSON.parse(new Buffer(result.data).toString());
