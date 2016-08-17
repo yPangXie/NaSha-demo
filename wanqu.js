@@ -64,23 +64,6 @@ if(program.spider) {
     });
 }
 
-/* 基于NaSha远程命令接口, 检测是否有新版本的Wanqu日报发布 */
-if(program.detectLatest) {
-    require('urllib').request('http://bigyoo.me:8000/ns/cmd', {
-        "method": "POST",
-        "timeout": 100000,
-        "data": {
-            "type": "wanqu",
-            "action": "detectLatest"
-        }
-    }).then((result)=> {
-        let resultData = JSON.parse(new Buffer(result.data).toString());
-        console.log('detectLatest result:', resultData);
-    }).catch((err) => {
-        console.log(err);
-    });
-}
-
 /* 基于NaSha远程命令接口, 获取随机的5篇数据 */
 if(program.random) {
     require('urllib').request('http://bigyoo.me:8000/ns/cmd', {
